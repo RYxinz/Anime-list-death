@@ -1,0 +1,35 @@
+<script>
+const baseData = [
+ {nama:"Eren Yeager", anime:"Attack on Titan", sebab:"Dipenggal oleh Mikasa", kategori:"tragis"},
+ {nama:"Rengoku Kyojuro", anime:"Kimetsu no Yaiba", sebab:"Luka fatal melawan Akaza", kategori:"heroik"},
+ {nama:"Jiraiya", anime:"Naruto Shippuden", sebab:"Dibunuh Pain", kategori:"tragis"},
+ {nama:"Ace", anime:"One Piece", sebab:"Melindungi Luffy", kategori:"heroik"},
+ {nama:"L", anime:"Death Note", sebab:"Dibunuh Light", kategori:"sadis"}
+];
+
+// AUTO DUPLIKASI JADI 500+
+let data = [];
+for(let i=0;i<100;i++){
+    baseData.forEach((x,idx)=>{
+        data.push({
+            nama: x.nama + " #" + (i+1),
+            anime: x.anime,
+            sebab: x.sebab,
+            kategori: x.kategori
+        });
+    });
+}
+
+const list = document.getElementById("list");
+
+data.forEach(x=>{
+ list.innerHTML += `
+  <div class="card">
+    <h3>${x.nama}</h3>
+    <p><b>Anime:</b> ${x.anime}</p>
+    <p><b>Sebab:</b> ${x.sebab}</p>
+    <p><b>Kategori:</b> ${x.kategori}</p>
+  </div>
+ `;
+});
+</script>
