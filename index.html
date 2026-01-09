@@ -1,20 +1,124 @@
-[
-  {
-    "nama": "Eren Yeager",
-    "anime": "Attack on Titan",
-    "sebab": "Dipenggal oleh Mikasa",
-    "kategori": "tragis"
-  },
-  {
-    "nama": "Rengoku Kyojuro",
-    "anime": "Kimetsu no Yaiba",
-    "sebab": "Luka fatal melawan Akaza",
-    "kategori": "heroik"
-  },
-  {
-    "nama": "Jiraiya",
-    "anime": "Naruto Shippuden",
-    "sebab": "Dibunuh Pain di Amegakure",
-    "kategori": "tragis"
-  }
-]
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bramzs | List Kematian Anime</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f1a, #1a0026);
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+header h1 {
+    color: #ff4dff;
+    letter-spacing: 3px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid #ff00ff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    animation: fade 0.7s ease;
+}
+
+.card h3 {
+    margin: 0;
+    color: #ff80ff;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BRAMZS</h1>
+    <p>List Kematian Karakter Anime</p>
+</header>
+
+<div class="container" id="list"></div>
+
+<footer>
+    © 2026 Bramzs Anime Database
+</footer>
+
+<script>
+const data = [
+    {
+        nama: "Eren Yeager",
+        anime: "Attack on Titan",
+        sebab: "Dibunuh oleh Mikasa demi menghentikan Rumbling"
+    },
+    {
+        nama: "Rengoku Kyojuro",
+        anime: "Kimetsu no Yaiba",
+        sebab: "Bertarung sampai mati melawan Akaza"
+    },
+    {
+        nama: "Jiraiya",
+        anime: "Naruto Shippuden",
+        sebab: "Gugur saat menyusup ke Amegakure"
+    },
+    {
+        nama: "Satoru Gojo",
+        anime: "Jujutsu Kaisen",
+        sebab: "Dikalahkan Sukuna dalam pertarungan brutal"
+    },
+    {
+        nama: "Kaneki Ken",
+        anime: "Tokyo Ghoul",
+        sebab: "Mengorbankan dirinya demi perdamaian"
+    }
+];
+
+const list = document.getElementById("list");
+
+data.forEach(item => {
+    list.innerHTML += `
+        <div class="card">
+            <h3>${item.nama}</h3>
+            <p><b>Anime:</b> ${item.anime}</p>
+            <p><b>Sebab Kematian:</b> ${item.sebab}</p>
+        </div>
+    `;
+});
+</script>
+
+</body>
+      </html>
